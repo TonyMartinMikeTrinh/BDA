@@ -10,20 +10,20 @@ data['span'] = data['LAST_YEAR'] - data['FIRST_YEAR'] + 1
 print(data.head())
 
 # min
-print(data['span'].min())
+print("min ",data['span'].min())
 # max
-print(data['span'].max())
+print("max ",data['span'].max())
 # lower quartil - 25% see https://en.wikipedia.org/wiki/Quartile
-print(data['span'].quantile(q=0.25))
+print("lower quartil ",data['span'].quantile(q=0.25))
 # upper quartile
-print(data['span'].quantile(q=0.75))
+print("upper quartile ",data['span'].quantile(q=0.75))
 # median
-print(data['span'].median())
+print("median ",data['span'].median())
 # mean
-print(data['span'].mean())
+print("mean ",data['span'].mean())
 
 #show
-#boxplot = data.boxplot(column=["span"])
+boxplot = data.boxplot(column=["span"])
 
 #without outliers
 data.boxplot(column=["span"], showfliers=False)
