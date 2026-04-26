@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Read csv-File
+# read csv-File
 data = pd.read_csv("publ_years.csv")
 
 # Activity Span
