@@ -1,0 +1,79 @@
+Aufgabe 1:
+Statistik:
+min:  0.0
+max:  72.0
+lower quartil:  3.0
+upper quartile:  12.0
+median:  6.0
+mean:  8.610909837561598
+
+
+Beschreibung:
+Die Box zeigt die zentralen 50% der Daten(3-12 Jahre)
+Der Median liegt bei 6 Jahren.
+Der lange obere Whisker und die vielen Punkte verdeutlichen eine hohe Anzahl an Ausreißern mit sehr langen Karrieren (bis 72 Jahre).
+
+
+Erkenntnisse:
+Die Mehrheit der Wissenschaftler hat eine kurze Publikationsspanne, die Karriere endet für 50% bereits nach 6 Jahren.
+1/4 aller Wissenschaftler publizieren maximal 3 Jahre lang.
+3/4 aller Wissenschaftler publizieren maximal 12 Jahre lang.
+Der Median ist niedriger als der Mean, was darauf hindeutet, dass es einige Ausreißer gibt, dessen Karriere deutlich länger andauert.
+Ein Minimum von 0 deutet auf fehlerhafte Einträge in der csv-Datei hin, da der Mindestwert laut Formel 1 sein müsste.
+Die extreme Menge an Ausreißern lässt die Box zusammenschrumpfen und erschwert das Ablesen der Quartile
+
+Die Wahl von 40 Bins sorgt für eine gute Balance zwischen Detailgrad und Übersichtlichkeit, da sie die Verteilung über mehrere Jahrzehnte
+hinweg glättet, aber dennoch die Tendenz der Daten (z. B. den Anstieg der Publikationen ab den 1990ern) deutlich sichtbar macht.
+
+Aufgabe 2:
+(a)
+Für alle drei Histogramme wurde eine Bin-Breite von 1 gewählt. Da Jahre und Zeitspannen ganze Zahlen sind, erlaubt dies die
+exakte Identifikation von Häufungen (z.B. der hohe Anteil an "1-Jahr-Karrieren") und Ausreißern, ohne dass Daten durch zu breite Intervalle "verschluckt" werden.
+
+(b)
+1. Klasse: ungültige oder extreme Zeitspannen(span < 1 und span > 40)
+- Entferne Datensätze mit span < 1, da laut Formel das Ergebnis mathematisch mindestens 1 ergeben muss. Werte < 1 deuten auf
+korrupte Datensätze oder fehlende Werte hin.
+- Entferne Datensätze mit Spannen über 40 Jahren, da diese als seltene Ausreißer(0,47%) gewertet werden
+-> Diese Klasse zeigt sich im Boxplot als extreme Ausreißer-Punkte weit oben oder als unplausibles Minimum von 0.
+-> Diese Werte verfälschen das Minimum in der Statistik.
+-> Durch das Entfernen stabilisiert sich der Mittelwert und es werden sich auf die Daten konzentriert, die eine realistischen
+Karriereverlauf enthalten
+
+2. Klasse: Publikationen vor 1950
+- Das relevante Zeitfenster für Informatik ist um 1950.
+-> Die Analyse wird auf die moderne Äre der Informatik begrenzt, sodass das Ergebniss von aktuellen Forschungsfragen nicht
+durch historische Randfälle beeinflusst wird.
+
+
+Statistik:
+percentage of +40 year span 0.004704314874258819
+amount to discrad 2062
+percentage of less than 1 year span 0.00043347227260386793
+amount to discrad 190
+percentage of erlier than 1950 0.00036731071520643545
+amount to discrad 161
+
+min  1.0
+max  40.0
+lower quartil  3.0
+upper quartile  12.0
+median  6.0
+mean  8.437775713155087
+----------------------------
+Biespiele für jede Klasse aus dem Datensatz:
+Klasse span < 1:
+                    #KEY  FIRST_YEAR  LAST_YEAR  span
+4195  homepages/194/3750      2019.0     2018.0   0.0
+
+Klasse span > 40:
+                  #KEY  FIRST_YEAR  LAST_YEAR  span
+183  homepages/40/7877      1974.0     2020.0  47.0
+
+Klasse vor 1950:
+                   #KEY  FIRST_YEAR  LAST_YEAR  span
+4354  homepages/13/8125      1883.0     1893.0  11.0
+----------------------------
+
+Antwort Forschungsfrage:
+Die bereinigte Antwort lautet: 8,44 Jahre
