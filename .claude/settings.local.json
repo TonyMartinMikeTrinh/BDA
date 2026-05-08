@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn compile *)",
+      "PowerShell(mvn compile *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\tmmtr\" -Filter \"winutils.exe\" -Recurse -ErrorAction SilentlyContinue -Depth 5 | Select-Object FullName; $env:HADOOP_HOME)",
+      "PowerShell($env:PATH -split \";\" | Where-Object { $_ -match \"hadoop\" })",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(javac *)",
+      "PowerShell(java *)"
+    ]
+  }
+}
